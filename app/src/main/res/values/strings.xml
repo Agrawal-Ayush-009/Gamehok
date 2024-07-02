@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Gamehok</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="registration_closes_in_2d_15h_10m">Registration Closes in <b>2d 15h 10m</b></string>
+    <string name="how_to_join_a_match">How to Join a Match</string>
+    <string name="have_your_game_open_already_and_on_the_latest_version">\u2022 Have your game open already and on the latest version</string>
+    <string name="once_the_match_is_configured_you_will_receive_an_invite_in_game_to_join_the_lobby">\u2022 Once the match is configured you will receive an invite in-game to join the lobby.</string>
+    <string name="join_the_match_and_wait_for_the_game_to_start">\u2022 Join the match and wait for the game to start.</string>
+    <string name="when_eliminated_return_to_the_match_room_page_to_be_ready_to_join_the_next_map_in_the_round">\u2022 When eliminated return to the match room page to be ready to join the next map in the round</string>
+</resources>
