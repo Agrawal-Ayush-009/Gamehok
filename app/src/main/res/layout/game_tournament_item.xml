@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="15dp"
+    android:backgroundTint="#001208"
+    android:adjustViewBounds="true"
+    app:cardCornerRadius="8dp"
+    app:strokeColor="#ffffff">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ccl2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/gameImage"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/img"
+            android:background="@drawable/round_outline_2"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/eventTitle"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:id="@+id/eventTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintStart_toEndOf="@id/gameImage"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="PUBG tournament  By Red Bull" />
+
+        <LinearLayout
+            android:id="@+id/eventTimeLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/eventTitle"
+            app:layout_constraintStart_toStartOf="@id/eventTitle"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/calender"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:id="@+id/eventTiming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Jun 26 - Jun 27, 2024"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eventFeeLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/eventTimeLL"
+            app:layout_constraintStart_toStartOf="@id/eventTimeLL"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/entryFee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="Entry - 10"
+                android:textColor="@color/white"
+                android:layout_gravity="start"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/coin"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eventParticipantLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/eventFeeLL"
+            app:layout_constraintStart_toStartOf="@id/eventFeeLL"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/group_filled"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/eventParticipant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="670/800"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/gameImage"
+            android:layout_marginStart="10dp"
+            android:text="See Details"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"/>
+        <ImageView
+            android:id="@+id/goButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/go"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="15dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

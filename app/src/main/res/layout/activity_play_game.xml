@@ -8,18 +8,87 @@
     android:background="#001208"
     tools:context=".PlayGameActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#001208">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/round_arrow_back_ios_24"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/gameHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="PUBG"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintTop_toTopOf="@id/backButton"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"/>
+
     <ImageView
         android:id="@+id/gameImage"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="15dp"
-        android:background="@drawable/round_outline"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        android:background="@drawable/round_outline_2"
         android:src="@drawable/img"
         android:scaleType="centerCrop"
         android:clipToOutline="true"
         />
 
+    <TextView
+        android:id="@+id/tournamentHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="10 Tournaments to battle"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gameImage" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tournamentRV"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tournamentHeader"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="40dp"
+        tools:itemCount="10"
+        tools:listitem="@layout/game_tournament_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_centerInParent="true"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

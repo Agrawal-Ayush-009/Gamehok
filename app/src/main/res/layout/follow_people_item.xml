@@ -31,6 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/followButton"
         android:layout_width="70dp"
         android:layout_height="32dp"
         app:layout_constraintEnd_toEndOf="parent"

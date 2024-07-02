@@ -12,8 +12,11 @@ class FollowPeopleRVAdapter(private val list: List<FollowPeopleModel>): Recycler
     inner class FollowPeopleViewHolder(binding: FollowPeopleItemBinding): RecyclerView.ViewHolder(binding.root) {
         val pp = binding.profilePic
         val personName = binding.name
+        val followButton = binding.followButton
 
     }
+
+    var onItemClicked: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -29,6 +32,9 @@ class FollowPeopleRVAdapter(private val list: List<FollowPeopleModel>): Recycler
     ) {
         Glide.with(holder.itemView).load(list[position].profilePic).into(holder.pp)
         holder.personName.text = list[position].name
+        holder.followButton.setOnClickListener {
+            onItemClicked?.invoke(list[position].name)
+        }
     }
 
     override fun getItemCount(): Int {

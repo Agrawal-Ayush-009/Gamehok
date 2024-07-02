@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -90,11 +91,6 @@ class HomeFragment : Fragment() {
 
 
         val competeBattleAdapter = CompeteBattleRVAdapter(competeBattleList)
-//        val carouselLayoutManager = CarouselLayoutManager()
-//        val uncontainedCarouselStrategy = UncontainedCarouselStrategy()
-//        carouselLayoutManager.setCarouselStrategy(uncontainedCarouselStrategy)
-////
-//        competeBattleRecyclerView.layoutManager = CarouselLayoutManager(UncontainedCarouselStrategy())
         competeBattleRecyclerView.adapter = competeBattleAdapter
         competeBattleAdapter.notifyDataSetChanged()
         competeBattleAdapter.onItemClick = {
@@ -111,6 +107,9 @@ class HomeFragment : Fragment() {
 
         val followPeopleAdapter = FollowPeopleRVAdapter(followPeopleList)
         followPeopleRV.adapter = followPeopleAdapter
+        followPeopleAdapter.onItemClicked = {
+            Toast.makeText(requireContext(), "Followed ${it}", Toast.LENGTH_SHORT).show()
+        }
 
 
         return binding.root
@@ -147,7 +146,10 @@ class HomeFragment : Fragment() {
         val playGameAdapter = PlayGameRVAdapter(playGameList)
         playGameRV.adapter = playGameAdapter
         playGameAdapter.onItemClick = {
-            startActivity(Intent(requireContext(), PlayGameActivity::class.java))
+            val intent = Intent(requireContext(), PlayGameActivity::class.java)
+            intent.putExtra("url", it.url)
+            intent.putExtra("name", it.title)
+            startActivity(intent)
         }
     }
 

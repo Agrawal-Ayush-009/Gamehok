@@ -13,7 +13,7 @@ class PlayGameRVAdapter(private val list : List<PlayGameItem>): RecyclerView.Ada
         val title = binding.gameName
     }
 
-    var onItemClick : ((String) -> Unit)? = null
+    var onItemClick : ((PlayGameItem) -> Unit)? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,7 +27,7 @@ class PlayGameRVAdapter(private val list : List<PlayGameItem>): RecyclerView.Ada
         Glide.with(holder.itemView).load(list[position].url).into(holder.image)
         holder.title.text = list[position].title
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(list[position].title)
+            onItemClick?.invoke(list[position])
         }
     }
 

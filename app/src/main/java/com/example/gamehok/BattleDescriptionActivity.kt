@@ -24,6 +24,8 @@ class BattleDescriptionActivity : AppCompatActivity() {
         val tabAdapter = FragmentAdapterMain(this)
         viewPager.adapter = tabAdapter
 
+        viewPager.setUserInputEnabled(false);
+
         TabLayoutMediator(tabLayout, viewPager, TabLayoutMediator.TabConfigurationStrategy { tab, position ->
             val tabNames = listOf("Overview", "Players", "Rules", "Standings")
             tab.text = tabNames[position]

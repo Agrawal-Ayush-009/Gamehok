@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.home -> replaceFragment(HomeFragment())
+                R.id.cup -> replaceFragment(CupFragment())
+                R.id.group -> replaceFragment(GroupFragment())
+                R.id.stream -> replaceFragment(StreamFragment())
                 else -> {
 
                 }
